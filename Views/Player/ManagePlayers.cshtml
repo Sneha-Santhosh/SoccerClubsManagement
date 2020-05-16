@@ -1,0 +1,40 @@
+﻿@model PlayerResponse
+
+@{
+    ViewBag.Title = "Manage Players";
+}
+
+<div class="addclub">
+    <form method="post" asp-action="ManagePlayers">
+        <div asp-validation-summary="All"> </div>
+        <p>
+            <label asp-for="PlayerName">Player name:</label>
+            <input asp-for="PlayerName" />
+        </p>
+
+        <p>
+            <label asp-for="Email">Email: </label>
+            <input asp-for="Email" />
+        </p>
+        <p>
+            <label asp-for="ClubName">Name of Club:</label>
+            <input asp-for="ClubName" />
+        </p>
+        <p>
+            <label asp-for="ClubID">Club ID:</label>
+            <input asp-for="ClubID" />
+        </p>
+        <p>
+            <label>Select the action for player</label>
+            <select asp-for="Deregister">
+                <option value="">Choose an option</option>
+                <option value="false">Add the player</option>
+                <option value="false">Reassign the player</option>
+                <option value="true">Deregister the player</option>
+
+            </select>
+        </p>
+        <button type="submit">Submit</button>
+
+    </form>
+</div>

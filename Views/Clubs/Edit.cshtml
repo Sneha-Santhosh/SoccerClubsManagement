@@ -1,0 +1,20 @@
+﻿@model ClubResponse
+@{ ViewBag.Title = "Edit Club"; Layout = "_Layout"; }
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ClubID" />
+    <div class="form-group">  
+    <label asp-for="ClubName"></label>
+    <input asp-for="ClubName" class="form-control" />  
+        </div>  
+    <div class="form-group">
+    <label asp-for="ManagerName"></label> 
+    <input asp-for="ManagerName" class="form-control" />
+        </div>
+    <div class="form-group">   
+    <label asp-for="Location"></label>
+    <input asp-for="Location" class="form-control" /> 
+        </div> 
+    <div class="text-center">   
+    <button class="btn btn-primary" type="submit">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>    </div>
+</form>

@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<PlayerResponse>
+@{
+    ViewBag.Title = "Player Details";
+   
+}
+
+
+<div class="panel-body">
+    <h2>Clubs</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ClubID</th>
+                <th>PlayerID</th>
+                <th>Name of Player</th>
+                <th>Email</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PlayerResponse response in Model)
+            {
+                <tr>
+                    <td>@response.ClubID</td>
+                    <td>@response.PlayerID</td>
+                    <td>@response.PlayerName</td>
+                    <td>@response.Email</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

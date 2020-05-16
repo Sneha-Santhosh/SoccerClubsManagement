@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<ClubResponse>
+@{ ViewBag.Title = "Club details"; Layout = "_Layout"; }
+    <table class="table table-striped table-bordered table-sm">
+        <tr>
+            <th class="text-right">ID</th>
+            <th>Name</th>
+            <th class="text-right">Manager</th>
+            <th class="text-center">Actions</th>
+
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td class="text-right">@item.ClubID</td>
+                <td>@item.ClubName</td>
+                <td class="text-right">@item.ManagerName</td>
+                <td class="text-center">
+                    <form asp-action="Delete" method="post">
+
+                        <a asp-action="Edit" class="btn btn-sm btn-warning" asp-route-clubId="@item.ClubID">Edit</a>
+                        <input type="hidden" name="ClubID" value="@item.ClubID" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        <a asp-action="PlayerDetails" class="btn btn-sm btn-warning"
+                           asp-route-id="@item.ClubID" asp-controller="Player">
+                            Players
+                        </a>
+                    </form>
+                    <a asp-action="ManagePlayers" asp-controller="Player" class="btn btn-sm btn-warning">
+                        Add Player
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>

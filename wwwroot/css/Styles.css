@@ -1,0 +1,64 @@
+﻿*{
+   margin:0;
+   padding:0;
+ 
+  
+}
+header {
+  
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url('../images/photo-1486286701208-1d58e9338013.webp');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-nav{
+    float:right;
+    list-style:none;
+    margin-top: 30px;
+}
+.main-nav li
+{
+    display:inline-block;
+}
+.main-nav li a
+{
+color:white;
+text-decoration:none;
+padding: 5px 10px;
+font-family:"Roboto",sans-serif;
+font-size:20px;
+
+}
+.main-nav li.active a
+{
+    border:1px solid white;
+}
+.main-nav li a:hover
+{
+    border: 1px solid white;
+}
+
+.logo img
+{
+    width:150px;
+    height:auto;
+    float:left; 
+}
+body{
+    
+    font-family:monospace;
+    text-align:center;
+}
+.row{
+    max-width:1200px;
+    margin: auto;
+}
+.addclub{
+   
+    text-align:center;
+    
+}
+label {
+    color: white;
+}

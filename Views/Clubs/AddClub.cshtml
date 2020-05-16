@@ -1,0 +1,15 @@
+﻿@model ClubResponse
+
+@{ 
+    ViewBag.Title = "Add Club";
+}
+
+            <div class="addclub">
+                <form method="post" asp-action="AddClub">
+                    @Html.Partial("InputPartial", Model)
+                    <button type="submit">Save</button>
+                    <button type="reset"><a asp-action="Index">Cancel</a></button>
+
+                </form>
+            </div>
+    

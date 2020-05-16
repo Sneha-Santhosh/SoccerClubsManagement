@@ -1,0 +1,33 @@
+﻿@model ClubListViewModel
+@{
+    ViewBag.Title = "Clubs";
+}
+
+
+<div class="panel-body">
+    <h2>Clubs</h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ClubID</th>
+                <th>Name</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ClubResponse response in Model.Clubs)
+            {
+                <tr>
+                    <td>@response.ClubID</td>
+                    <td><a asp-action="ClubDetails"  asp-route-id="@response.ClubName">@response.ClubName</a></td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div page-model="@Model.PagingInfo" page-action="Clubs"></div>
+
