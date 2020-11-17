@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-
 using Microsoft.AspNetCore.Mvc;
 using Sneha_S_301096645.Models.ViewModels;
 
@@ -17,13 +16,13 @@ namespace Sneha_S_301096645.Controllers
         private SignInManager<IdentityUser> signInManager;
         public AccountController(UserManager<IdentityUser> userMgr, SignInManager<IdentityUser> signInMgr)
         { 
-         userManager = userMgr; signInManager = signInMgr; 
+            userManager = userMgr; signInManager = signInMgr; 
         }
         [AllowAnonymous]
-            public ViewResult Login(string returnUrl) 
+        public ViewResult Login(string returnUrl) 
         {
             return View(new LoginModel { ReturnUrl = returnUrl });
-         }
+        }
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -43,12 +42,12 @@ namespace Sneha_S_301096645.Controllers
             }
         
         ModelState.AddModelError("", "Invalid name or password");       
-            return View(loginModel);
-    }
-    public async Task<RedirectResult> Logout(string returnUrl = "/") 
-    {
-        await signInManager.SignOutAsync();
-        return Redirect(returnUrl);
-    }
-  } 
+        return View(loginModel);
+        }
+        public async Task<RedirectResult> Logout(string returnUrl = "/") 
+        {
+            await signInManager.SignOutAsync();
+            return Redirect(returnUrl);
+        }
+    } 
 }
