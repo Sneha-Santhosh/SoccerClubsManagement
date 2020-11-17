@@ -15,15 +15,16 @@ namespace Sneha_S_301096645.Controllers
         {
             repository = repo;
         }
+        
         [Authorize]
         [HttpGet]
         [Route("/Player/ManagePlayers/{id?}")]
         public ViewResult ManagePlayers()
-        {
-            
+        {         
             return View();
         }
-       [Authorize]
+        
+        [Authorize]
         [HttpPost]
         public ViewResult ManagePlayers(PlayerResponse player)
         {
