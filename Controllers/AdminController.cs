@@ -13,7 +13,9 @@ namespace Sneha_S_301096645.Controllers
     {
         private IClubRepository repository;
         public AdminController(IClubRepository repo)
-        { repository = repo; }
+        { 
+            repository = repo;
+        }
         public ViewResult ClubDetails() => View(repository.Clubs);
         public ViewResult Edit(int clubId) => View(repository.Clubs.FirstOrDefault(c => c.ClubID == clubId));
         [HttpPost]
@@ -26,7 +28,7 @@ namespace Sneha_S_301096645.Controllers
                 return RedirectToAction("Index");
             }
             else
-            {                // there is something wrong with the data values      
+            {                    
                 return View(club);
             }
         }
