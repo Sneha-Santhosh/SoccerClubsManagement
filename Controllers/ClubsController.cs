@@ -19,16 +19,16 @@ namespace Sneha_S_301096645.Controllers
         }
         public ViewResult Clubs(int clubsPage = 1)
                         => View(new ClubListViewModel{
-                          Clubs = repository.Clubs
-                            .OrderBy(c => c.ClubID)
-                            .Skip((clubsPage - 1) * PageSize)
-                            .Take(PageSize),
-                          PagingInfo = new PagingInfo
-                          {
+                           Clubs = repository.Clubs
+                           .OrderBy(c => c.ClubID)
+                           .Skip((clubsPage - 1) * PageSize)
+                           .Take(PageSize),
+                           PagingInfo = new PagingInfo
+                           {
                               CurrentPage = clubsPage,
                               ItemsPerPage = PageSize,
                               TotalItems = repository.Clubs.Count()
-                          } 
+                           } 
                         });
         public ViewResult Index()
         {
@@ -37,30 +37,25 @@ namespace Sneha_S_301096645.Controllers
 
         [Authorize]
         [HttpGet]
-
         public ViewResult AddClub()
         {
-
             return View();
         }
         [Authorize]
         [HttpPost]
         public ViewResult AddClub(ClubResponse clubResponse)
-        {
-            
+        {   
             repository.AddNewClub(clubResponse);
             ModelState.Clear();
-            return View("ClubDetails",repository.Clubs);
-           
+            return View("ClubDetails",repository.Clubs);    
         }
-   
         public ViewResult ClubDetails(string name)
         {
             return View(repository.Clubs);
         }
         [Authorize]
         public ViewResult Edit(int clubId) => View(repository.Clubs.FirstOrDefault(c => c.ClubID == clubId));
-
+       
         [Authorize]
         [HttpPost]
         public IActionResult Edit(ClubResponse club)
@@ -72,13 +67,11 @@ namespace Sneha_S_301096645.Controllers
                 return RedirectToAction("ClubDetails");
             }
             else
-            {                // there is something wrong with the data values      
+            {               
                 return View(club);
             }
         }
-
-        [Authorize]
-      
+        [Authorize]    
         public IActionResult Delete(ClubResponse club)
         {
             ClubResponse deletedClub = repository.DeleteClub(club);
