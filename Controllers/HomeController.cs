@@ -9,19 +9,17 @@ namespace Sneha_S_301096645.Controllers
 {
     public class HomeController : Controller
     {
-       // private IClubRepository repository = new FakeClubRepository();
+        private IClubRepository repository = new FakeClubRepository();
         public ViewResult Index()
         {
             return View();
         }
         [HttpGet]
-
         public ViewResult AddClub()
         {
-
             return View();
         }
-      /*  [HttpPost]
+        [HttpPost]
         public ViewResult AddClub(ClubResponse clubResponse)
         {
             if (ModelState.IsValid)
@@ -37,35 +35,28 @@ namespace Sneha_S_301096645.Controllers
         public ViewResult Clubs()
         {
             return View(ClubRepository.ClubResponse);
-        }*/
+        }
         [HttpGet]
-
         public ViewResult ManagePlayers()
         {
-
             return View();
         }
-        //[HttpPost]
-        //public ViewResult ManagePlayers(PlayerResponse playerResponse)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        PlayerRepository.AddResponse(playerResponse);
-        //        return View("ClubDetails", PlayerRepository.PlayerResponses.Where(r => r.Deregister == false).OrderBy(r => r.ClubID));
-
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //}
+        [HttpPost]
+        public ViewResult ManagePlayers(PlayerResponse playerResponse)
+        {
+            if (ModelState.IsValid)
+            {
+                PlayerRepository.AddResponse(playerResponse);
+                return View("ClubDetails", PlayerRepository.PlayerResponses.Where(r => r.Deregister == false).OrderBy(r => r.ClubID));
+            }
+            else
+            {
+                return View();
+            }
+        }
         public ViewResult ClubDetails()
         {
-
-
             return View(ClubRepository.ClubResponse);
-
         }
     }
 }
-
