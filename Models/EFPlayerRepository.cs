@@ -13,12 +13,9 @@ namespace Sneha_S_301096645.Models
             context = ctx;
         }
         public IQueryable<PlayerResponse> Players => context.Players;
-
-  
         public void SavePlayer(PlayerResponse player)
         {
             context.Players.Add(player);
-            
             context.SaveChanges();
         }
     }
