@@ -7,10 +7,7 @@ namespace Sneha_S_301096645.Models
 {
     public class FakeClubRepository//:IClubRepository
     {
-
-        private List<ClubResponse> clubResponses = new List<ClubResponse>();
-        
-            
+        private List<ClubResponse> clubResponses = new List<ClubResponse>();     
         public void AddResponse(ClubResponse clubResponse)
         {
             clubResponses.Add(clubResponse);
@@ -21,8 +18,6 @@ namespace Sneha_S_301096645.Models
             {
                 return clubResponses.AsQueryable<ClubResponse>();
             }
-        }
-
-      
+        }      
     }
 }
