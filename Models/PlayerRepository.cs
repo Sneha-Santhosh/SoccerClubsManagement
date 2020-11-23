@@ -14,14 +14,10 @@ namespace Sneha_S_301096645.Models
             {
                 return playerResponses;
             }
-        }
-       
+        }       
         public static void AddResponse(PlayerResponse playerResponse)
         {
             playerResponses.Add(playerResponse);
-        }
-   
-
-        
+        }      
     }
 }
