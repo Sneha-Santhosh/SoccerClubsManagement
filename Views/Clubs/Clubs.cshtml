@@ -11,9 +11,6 @@
             <tr>
                 <th>ClubID</th>
                 <th>Name</th>
-
-
-
             </tr>
         </thead>
         <tbody>
@@ -22,12 +19,9 @@
                 <tr>
                     <td>@response.ClubID</td>
                     <td><a asp-action="ClubDetails"  asp-route-id="@response.ClubName">@response.ClubName</a></td>
-
-
-                </tr>
+               </tr>
             }
         </tbody>
     </table>
 </div>
 <div page-model="@Model.PagingInfo" page-action="Clubs"></div>
-
