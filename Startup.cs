@@ -19,10 +19,8 @@ namespace Sneha_S_301096645
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
     
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -47,8 +45,7 @@ namespace Sneha_S_301096645
 
             app.UseAuthentication();
             app.UseStaticFiles();
-
-          
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -62,10 +59,8 @@ namespace Sneha_S_301096645
                     template: "{controller=Clubs}/{action=Index}/{id?}");
             });
 
-
             SeedData.EnsurePopulated(app);
             IdentitySeedData.EnsurePopulated(app);
         }
     }
 }
-
