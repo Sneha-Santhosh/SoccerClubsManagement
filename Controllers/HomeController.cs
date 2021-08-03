@@ -9,7 +9,6 @@ namespace Sneha_S_301096645.Controllers
 {
     public class HomeController : Controller
     {
-        private IClubRepository repository = new FakeClubRepository();
         public ViewResult Index()
         {
             return View();

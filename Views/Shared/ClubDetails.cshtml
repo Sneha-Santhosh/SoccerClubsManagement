@@ -1,35 +1,8 @@
-﻿@*@model IEnumerable<ClubResponse>
-    @{
-        ViewBag.Title = "Club Details";
-    }
-
-    <div class="panel-body">
-        <h2>Clubs</h2>
-        <table class="table table-sm table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>ClubID</th>
-                    <th>Name of Club</th>
-                    <th>Location</th>
-                    <th>Name of Manager</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (ClubResponse response in Model)
-                {
-                <tr>
-                    <td>@response.ClubID</td>
-                    <td>@response.ClubName</td>
-                    <td>@response.Location</td>
-                    <td>@response.ManagerName</td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-     
-@model IEnumerable<ClubResponse>
-@{ ViewBag.Title = "All Clubs"; Layout = "_Layout"; }
+﻿@model IEnumerable<ClubResponse>
+    
+@{
+     ViewBag.Title = "All Clubs"; Layout = "_Layout";
+ }
      
 <table class="table table-striped table-bordered table-sm">
     <tr>
